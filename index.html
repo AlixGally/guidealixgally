@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <title>Alix Gally - Guide de Haute Montagne</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+      background-size: 200% 200%;
+      animation: bgMove 10s ease-in-out infinite alternate;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1585421514287-27b2c45f021d?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('fondentre1.png') center center/cover no-repeat;
+  opacity: 0.42; /* Ajuste la transparence ici */
+  z-index: 0; /* Derrière le ::after (qui est le voile noir) */
+}
+
+    .header-content {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-weight: 800;
+      align-items: center;
+      gap: 1px;
+    }
+    header h1 {
+      font-size: 4.2em;
+      letter-spacing: 2px;
+      animation: colorChange 4s infinite alternate;
+      margin-bottom: 1px;
+    }
+    @keyframes colorChange {
+      0% { color: #ffa726; }
+      50% { color: #42a5f5; }
+      100% { color: #66bb6a; }
+    }
+    .sous-titre {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  margin-bottom: 66px;
+}
+    .slogan {
+      font-size: 1.32em;
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      animation: animate__fadeInDown 1.5s;
+      margin-bottom: 22px;
+    }
+    .cta-btn {
+      background: linear-gradient(90deg, #ffa726, #42a5f5);
+      color: white;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 16px rgba(66,165,245,0.18);
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.4s, transform 0.2s;
+      z-index: 2;
+      animation: animate__fadeInUp 1.5s;
+      text-decoration: none;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(90deg, #42a5f5, #ffa726);
+      transform: translateY(-3px) scale(1.07);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #1f1f1f;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.3s;
+      font-size: 1.1em;
+    }
+    nav a:hover {
+      color: #ffa726;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255,255,255,0.85);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #2d3a4b;
+      font-size: 2.2em;
+      letter-spacing: 1px;
+    }
+    /* À propos section */
+    .apropos-flex {
+    font-size: 0.86em;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .apropos-flex img {
+      width: 180px;
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s;
+    }
+    .apropos-flex img:hover {
+      transform: scale(1.08) rotate(-2deg);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    /* Prestations */
+    .prestations {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0.86em;
+      gap: 30px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .presta-card {
+      background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(66,165,245,0.08);
+      padding: 24px 18px;
+      width: 220px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .presta-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(66,165,245,0.18);
+    }
+    .presta-card i, .presta-card svg {
+      font-size: 4.2em;
+      color: #42a5f5;
+      margin-bottom: 10px;
+    }
+    .presta-card h3 {
+      margin: 10px 0 8px 0;
+      font-size: 1.2em;
+      color: #2d3a4b;
+    }
+    .presta-card p {
+      font-size: 1em;
+      color: #444;
+    }
+    .presta-card.full-width {
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+    /* Galerie */
+    .galerie {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+    .galerie img {
+      width: 150px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      transition: transform 0.4s cubic-bezier(.25,.8,.25,1), box-shadow 0.4s;
+    }
+    .galerie img:hover {
+      transform: scale(1.08) rotate(2deg);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    }
+    /* Timeline */
+    .timeline {
+      position: relative;
+      margin: 40px 0 0 0;
+      padding-left: 30px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #ffa726, #42a5f5);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 30px;
+      animation: animate__fadeInUp 1s;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -2px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border: 4px solid #ffa726;
+      border-radius: 50%;
+      z-index: 2;
+      box-shadow: 0 2px 8px rgba(255,167,38,0.15);
+    }
+    .timeline-content {
+      background: #f7fafc;
+      border-radius: 8px;
+      padding: 10px 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      font-size: 1.08em;
+      color: #333;
+      margin-left: 10px;
+    }
+    /* Avis */
+    .testimonials {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .testimonial-card {
+      background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(66,165,245,0.08);
+      padding: 24px 18px;
+      width: 280px;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
+      font-size: 1em;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-6px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(66,165,245,0.18);
+    }
+    .testimonial-card .author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .testimonial-card .author img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #42a5f5;
+    }
+    .testimonial-card .author span {
+      font-weight: bold;
+      color: #2d3a4b;
+    }
+    /* Actu */
+    .actu {
+      background: #f7fafc;
+      border-radius: 10px;
+      padding: 18px 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+      margin-bottom: 20px;
+      font-size: 1.08em;
+      color: #333;
+    }
+    /* Carte */
+    .map-container {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 0 0;
+    }
+    .map-container iframe {
+      border: 2px solid #42a5f5;
+      border-radius: 12px;
+      width: 320px;
+      height: 220px;
+      box-shadow: 0 2px 12px rgba(66,165,245,0.08);
+    }
+    /* Contact */
+    .contact-info {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .contact-info p {
+      margin: 8px 0;
+      font-size: 1.1em;
+    }
+    .contact-info i {
+      color: #42a5f5;
+      margin-right: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 600px;
+      margin: auto;
+      margin-top: 20px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #b0bec5;
+      border-radius: 6px;
+      font-size: 1em;
+      background: #f7fafc;
+      transition: border 0.3s;
+    }
+    input:focus, textarea:focus {
+      border: 1.5px solid #42a5f5;
+      outline: none;
+    }
+    button {
+      background: linear-gradient(90deg, #ffa726, #42a5f5);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1.1em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(66,165,245,0.08);
+      transition: background 0.4s, transform 0.2s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #42a5f5, #ffa726);
+      transform: translateY(-3px) scale(1.05);
+    }
+    /* Retour en haut */
+    #topBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+      background: #42a5f5;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 2em;
+      box-shadow: 0 2px 8px rgba(66,165,245,0.18);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    #topBtn:hover {
+      background: #ffa726;
+      transform: scale(1.1);
+    }
+    footer {
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 1.1em;
+      letter-spacing: 1px;
+    }
+    /* Responsive */
+    @media (max-width: 800px) {
+      .apropos-flex {
+        flex-direction: column;
+        gap: 18px;
+      }
+      .galerie img {
+        width: 100px;
+        height: 80px;
+      }
+      section {
+        padding: 30px 5vw;
+      }
+      .prestations, .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+      .presta-card, .testimonial-card {
+        width: 90vw;
+        max-width: 350px;
+      }
+      .map-container iframe {
+        width: 90vw;
+        height: 180px;
+      }
+    }
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.3em;
+      }
+      .galerie img {
+        width: 80px;
+        height: 60px;
+      }
+      .timeline-content {
+        font-size: 0.98em;
+      }
+    }
+    .apropos-blocs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.apropos-card {
+  background: #f7fafc;
+  border-left: 5px solid #42a5f5;
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apropos-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.apropos-card p {
+  margin: 0;
+  font-size: 1.03em;
+  line-height: 1.6;
+  color: #333;
+}
+    .apropos-blocs {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-top: 30px;
+}
+
+.apropos-card {
+  background: #ffffffd9;
+  border-left: 5px solid #42a5f5;
+  border-radius: 16px;
+  padding: 22px 26px 26px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apropos-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+}
+
+.apropos-card p {
+  margin: 0;
+  font-size: 1.04em;
+  line-height: 1.6;
+  color: #2d3a4b;
+}
+
+
+    .apropos-group {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  margin-bottom: 40px;
+}
+    .apropos-card {
+  background: rgba(207, 222, 243, 0.4);
+  border-left: 5px solid #42a5f5;
+  border-radius: 14px;
+  padding: 22px 26px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apropos-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+    @media (min-width: 1440px) {
+      section {
+        max-width: 1200px;
+      }
+      .presta-card, .testimonial-card {
+        width: 260px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .slogan {
+        font-size: 1em;
+      }
+      .cta-btn {
+        padding: 12px 24px;
+        font-size: 0.95em;
+      }
+      .presta-card p, .testimonial-card p {
+        font-size: 0.92em;
+      }
+      input, textarea {
+        font-size: 0.95em;
+      }
+    }
+
+    @media (max-height: 600px) {
+      header {
+        height: auto;
+        padding: 40px 0;
+      }
+    }
+
+    .galerie img {
+      max-width: 100%;
+      height: auto;
+    }
+
+
+    @media (max-width: 768px) {
+      .burger {
+        display: flex;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #1f1f1f;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease;
+        padding: 0 20px;
+        display: flex;
+      }
+      nav.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 10px 20px;
+      }
+      nav a {
+        padding: 10px 0;
+      }
+    }
+    .burger-menu {
+    display: none; /* Cacher par défaut sur les grands écrans */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 2.4em;
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001; /* Au-dessus de tout */
+}
+
+.menu-items {
+    display: none; /* Cacher par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-items a {
+    color: white;
+    font-size: 2em;
+    margin: 20px;
+    text-decoration: none;
+}
+
+/* Media query pour afficher le menu burger sur les petits écrans */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: block;
+    }
+    nav a {
+        display: none; /* Cacher les liens de navigation classiques */
+    }
+
+
+  </style>
+</head>
+<body>
+  <button onclick="topFunction()" id="topBtn" title="Retour en haut"><i class="fas fa-arrow-up"></i></button>
+<div class="burger-menu">
+    <i class="fas fa-bars"></i>
+</div>
+<div class="menu-items">
+    <a href="#a-propos"><i class="fas fa-user"></i>  À propos</a>
+    <a href="#prestations"><i class="fas fa-hiking"></i>  Prestations</a>
+    <a href="#fonctionnement"><i class="fas fa-sitemap"></i>  Fonctionnement</a>
+    <a href="#realisations-perso"><i class="fas fa-mountain"></i>  Réalisations perso</a>
+    <a href="#realisations-pro"><i class="fas fa-briefcase"></i>  Réalisations pro</a>
+    <a href="#avis"><i class="fas fa-star"></i>  Avis</a>
+    <a href="#contact"><i class="fas fa-envelope"></i>  Contact</a>
+</div>
+
+
+  <header class="animate__animated animate__fadeIn">
+    <div class="header-content">
+      <h1>Alix Gally</h1>
+      <p class="sous-titre">Guide de Haute Montagne UIAGM</p>
+      <div class="slogan">«Beau temps, mauvais temps, facile, difficile, j'ai besoin de chanter le même hymne que lui.<br>
+      Là est le meilleur cadeau de nos montagnes.<br>
+      Gravissant un sommet, un Homme fait son travail, un autre est en vacances et le luxe de leurs efforts est leur amitié»<br>
+      -Gaston Rébufat-</div>
+      <a href="#contact" class="cta-btn">Gravissez vos rêves, je m’occupe du reste !</a>
+    </div>
+    <!-- Burger button -->
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav id="nav-menu">
+    <a href="#a-propos"><i class="fas fa-user"></i>À propos</a>
+    <a href="#prestations"><i class="fas fa-hiking"></i>Prestations</a>
+    <a href="#fonctionnement"><i class="fas fa-sitemap"></i>Fonctionnement</a>
+    <a href="#realisations-perso"><i class="fas fa-mountain"></i>Réalisations perso</a>
+    <a href="#realisations-pro"><i class="fas fa-briefcase"></i>Réalisations pro</a>
+    <a href="#avis"><i class="fas fa-star"></i>Avis</a>
+    <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
+  </nav>
+
+<section id="a-propos" data-aos="fade-up">
+  <h2>À propos</h2>
+
+  <div class="apropos-flex">
+    <img src="monprofil.jpg" alt="Portrait Alix Gally" />
+  </div>
+
+  <div class="apropos-blocs">
+
+    <!-- Bloc regroupé 1 à 4 -->
+    <div class="apropos-card" data-aos="fade-up" data-aos-delay="100">
+      <div class="apropos-icon-group">
+        <i class="fas fa-user-friends"></i>
+        <i class="fas fa-mountain"></i>
+      </div>
+      <p style="font-size: 0.9em;">Moi c’est Alix GALLY, 24 ans, guide de haute montagne UIAGM.<br>
+        Originaire du Jura et aujourd’hui basée à Saint-Gervais-les-Bains, aux portes du massif du Mont-Blanc.<br><br>
+        Après quelques années en compétition de kitesurf, c’est finalement l’appel de la montagne qui me rattrape.<br>
+        À 5 ans, je rencontre Ninon Bertrand, d’abord camarade d’école, puis rapidement amie proche.<br>
+        Très tôt, elle me transmet sa passion (familiale) pour l’altitude.<br>
+        Ensemble, on apprend, on progresse, on partage nos premières courses…<br>
+        Et aujourd’hui encore, notre cordée continue d’évoluer, portée par cette même envie d’aventure et de complicité.<br><br>
+        J’ai découvert l’alpinisme par l’escalade : d’abord en falaise, puis en grande voie, jusqu’à la haute montagne.<br>
+        Très vite, les approches deviennent plus techniques : crampons, piolets… Je tombe amoureuse de l’alpinisme mixte.  L’hiver venu, les sommets me manquent, alors j’explore la cascade de glace et le ski de randonnée.<br>
+        Plus tard viendront les pentes raides et les grandes ascensions mythiques, souvent partagées avec Ninon.<br><br>
+        J’intègre le Groupe Excellence du CAF, et tout s’accélère…<br>
+      Mais tout s’arrête un temps, lorsque je pars au Canada faire des études en biologie.<br>
+        Diplômée d’une licence, aujourd’hui chercheuse à l’UQAM (équivalence thèse), je continue à grimper, sur rocher comme sur glace.<br>
+        Pourtant, il me manque quelque chose…</p>
+    </div>
+
+    <!-- Bloc regroupé 5 à 7 -->
+    <div class="apropos-card" data-aos="fade-up" data-aos-delay="200">
+      <div class="apropos-icon-group">
+        <i class="fas fa-leaf"></i>
+        <i class="fas fa-hands-helping"></i>
+      </div>
+      <p style="font-size: 0.9em;">Pendant 15 ans j'ai été droguée à l'alpinisme.<br>
+      Cette activité remplissait ma vie, mes pensées, mon emploi du temps et vidait mon compte en banque. J'étais clairement dépendante et je ne pouvais pas faire autre chose qu'aller "là-haut". Ski, grimpe, cascade de glace, alpinisme…<br>
+      Des lumières superbes. Un effort physique long qui te rend plus forte et te donne confiance en toi. Le privilège d'être dans un lieu où l'être humain n'a rien à y faire, là où la nature impose le silence et la justesse.<br>
+        Fuir le monde d'en bas où je me sentais à l'étroit. Montrer de quoi j'étais capable. Respirer, M'habiller comme je voulais, sans le regard des autres. M'arrêter faire pipi quand j'en avais envie. Manger et boire avec une grosse faim à satisfaire.<br>
+      Grimper me permettait d’exister autrement, libre. Les 5 sens en éveil. Pour rester en vie...<br><br>
+        Et puis j’ai compris que la montagne n’est pas un terrain de jeu. C’est un lieu de Vie.Fragile, immense, essentiel.<br>
+      Aujourd’hui, je continue d’y vivre des instants puissants, mais avec un regard plus lucide.<br><br>
+      Accompagner les autres là-haut, c’est aussi transmettre cela : l’émerveillement, le lien au vivant, et la conscience de ce qu’il faut préserver.<br><br>
+        Ce qui m’anime profondément, c’est le partage. La montagne prend tout son sens lorsqu’elle est vécue à plusieurs.<br>
+        Là-haut, on vit des moments rares, suspendus, qui deviennent inoubliables lorsqu’ils sont partagés.<br>
+      Au fil des sorties, j’aime construire une vraie relation avec mes clients, basée sur la confiance, la bienveillance et l’envie de progresser ensemble.<br>
+        Cela permet d’imaginer des projets sur le long terme, d’évoluer avec sérénité vers des objectifs plus ambitieux, dans une ambiance plus sympa =)</p>
+    </div>
+
+    <!-- Bloc 8 seul -->
+    <div class="apropos-card" data-aos="fade-up" data-aos-delay="300">
+      <i class="fas fa-language apropos-icon"></i>
+      <p><span style="font-size: 0.74em;"><em>-> I speak fluent English, y también muy buen español <-</em></span></p>
+    </div>
+
+  </div>
+
+  <!-- Carte -->
+  <div id="map-alpes" style="width:100%;max-width:260px;height:180px;margin:30px auto;border-radius:22px;box-shadow:0 2px 12px rgba(66,165,245,0.08);"></div>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var saintGervais = [45.86265, 6.71739];
+      var map = L.map('map-alpes').setView([45.8, 7.5], 7);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap',
+        maxZoom: 100,
+      }).addTo(map);
+      L.marker(saintGervais)
+        .addTo(map)
+        .bindPopup("<b>Saint-Gervais-les-Bains</b><br>Mon camp de base !");
+      map.setView(saintGervais, 9.4);
+    });
+  </script>
+</section>
+
+
+<section id="prestations" data-aos="fade-up">
+  <h2>Prestations</h2>
+  <div class="prestations">
+    <div class="presta-card" data-aos="zoom-in">
+      <i class="fas fa-mountain"></i>
+      <h3>Pratique</h3>
+      <p>
+        Peu importe la pratique, tant qu'on a un sac et qu'on transpire (un peu) c'est OK !<br>
+        Des statules aux chaussons, en passant par les piolets.<br>
+        Je propose de l'alpinisme classique, escalade, grandes voies, courses d’arêtes, ski de randonnée, cascade de glace, goulottes, escalade mixte...
+      </p>
+    </div>
+    <div class="presta-card" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-map-marked-alt"></i>
+      <h3>Lieu</h3>
+      <p>
+        Peu importe l'endroit, tant qu'il y a du reflif je dis oui !<br>
+        Dans toutes les Alpes, du Mont Blanc, Aravis, Vanoise, Écrins, Belledonne...<br>
+        Même en Suisse,Italie...
+      </p>
+    </div>
+    <div class="presta-card" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>Saison</h3>
+      <p>
+        Peu importe la saison, tant qu'il y a une ligne à tracer c'est bon !<br>
+        Je guide toute l’année, parce que la montagne a mille visages, et qu’aucune saison ne se ressemble.<br>
+        Printemps, été, automne ou hiver, c'est selon les conditions du moment.
+      </p>
+    </div>
+    <div class="presta-card" data-aos="zoom-in" data-aos-delay="300">
+      <i class="fas fa-clock"></i>
+      <h3>Durée</h3>
+      <p>
+        Peu importe la durée, tant que l'avanture est au rendez-vous !<br>
+        De la demi-journée d'escalade ou de ski, jusqu'à plusieurs jours pour une ascension ou un raid à ski, on adapte le rythme.
+      </p>
+    </div>
+    <div class="presta-card" data-aos="zoom-in" data-aos-delay="400">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Stage progression & sécurité</h3>
+      <p>Pour booster votre apprentissage et progression, je propose des stages (journée ou plusieurs jours) : école de glace, terrain d’aventure, encordement glacier et rocher, sécurité avalanche et progression technique.<br>
+        Bref, tout pour être prêt à attaquer la montagne en confiance avec le sourire !</p>
+    </div>
+    <div class="presta-card" data-aos="zoom-in" data-aos-delay="500">
+      <i class="fas fa-parachute-box"></i>
+      <h3>Bonus : Parapente</h3>
+      <p>
+        Pour sublimer les descentes (et préserver nos genoux), je propose des descentes en parapentes (sous reserve de bonnes conditions).<br>
+      En solo pour les pilotes, ou en biplace sous mon aile pour ceux qui veulent découvrir la vue d’en haut en toute tranquillité.</p>
+    </div>
+  </div>
+</section>
+  <section id="fonctionnement" data-aos="fade-up">
+  <h2>Ma philosophie & fonctionnement</h2>
+  <div class="prestations">
+
+    <!-- Bloc 1 -->
+    <div class="presta-card full-width" data-aos="zoom-in">
+  <i class="fas fa-eye"></i>
+  <p style="font-size: 1.36em;">
+    <strong>Le guide est celui qui passe devant !</strong><br>
+    Voilà ce qu’on nous a toujours dit, appris : être devant, faire le chemin, prendre les risques.<br>
+    Mais pour moi, le vrai rôle du guide, c’est d’apprendre à chacun à aller devant, à lire le terrain, à prendre les bonnes décisions, à partager la trace plutôt qu’à la monopoliser.<br><br>
+    Être premier de cordée, ce n’est pas un exploit à garder pour soi, c’est une expérience à transmettre.<br>
+    Je crois que la montagne n’est pas faite pour l’exploit à tout prix, ni pour la prise de risque inutile.<br>
+    Ce qui compte, c’est l’histoire qu’on vit ensemble, l’inspiration qu’on partage, la progression de chacun et la confiance qui se tisse au fil des sorties.<br>
+    <span style="font-size: 0.66em;">J'accorde de l'importance à ce que vous passiez parfois devant, que vous grimpiez de temps en temps en tête... que vous appreniez à mener une cordée.</span>
+  </p>
+</div>
+
+    <!-- Bloc 2 -->
+    <div class="presta-card full-width" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-people-group"></i>
+      <h3>Vivre & construire l’expérience ensemble</h3>
+      <p>Je veux que vous soyez le l’acteur principal de votre aventure, en gardant la sécurité toujours au centre de l’action et sans jamais perdre de vue le plaisir.<br>
+        Car la montagne, c’est sérieux… mais c’est aussi un immense espace, où la bonne humeur et la rigolade sont essentielles !<br><br>
+      Avant chaque sortie, on prend le temps d’échanger pour définir vos envies, votre niveau technique et physique, votre motivation, et bien sûr les conditions et la météo.<br>
+        L’idée est d’imaginer une aventure qui vous ressemble, enrichissante pour vous comme pour moi, et qui laisse de beaux souvenirs.<br><br>
+      Parce que les plus belles histoires se racontent souvent autour d’une bière après la course, j’adore prolonger l’aventure au bar, partager les impressions, rêver aux prochaines sorties et célébrer les petits et grands succès du jour.</p>
+    </div>
+
+    <!-- Bloc 3 -->
+    <div class="presta-card full-width" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-scale-balanced"></i>
+      <h3>Tarification éthique et participative plus juste</h3>
+      <p>Je propose un tarif minimum très accessible, qui couvre uniquement les frais de déplacement et ma journée de travail.<br>
+        Après l’activité, vous êtes libre d’ajouter la contribution de votre choix selon votre satisfaction, le déroulement de la sortie et le travail accompli (qui peut énormément varier selon les conditions du jour, difficile à prévoir).<br><br>
+      Ce modèle participatif favorise la confiance, l’équité et la reconnaissance de mon travail.
+    </div>
+<p style="font-size: 1.36em;">La montagne n’est pas seulement un sommet à atteindre, c’est un chemin à partager</p>
+  </div>
+</section>
+
+
+
+
+
+
+<section id="realisations-perso" data-aos="fade-right">
+  <h2>Réalisations personnelles</h2>
+  <div class="galerie">
+    <img src="rperso1.jpg" alt="rperso1" />
+    <img src="rperso2.jpg" alt="rperso2" />
+    <img src="rperso3.jpg" alt="rperso3" />
+    <img src="rperso4.jpg" alt="rperso4" />
+    <img src="rperso5.jpg" alt="rperso5" />
+  </div>
+  <ul class="timeline" data-aos="fade-up">
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Ascension solo de l’Aiguille Verte (Whymper)</strong> – 2023</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Traversée des Arêtes du Diable</strong> – 2022</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Expédition Patagonie - Cerro Torre (tentative)</strong> – 2021</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Courses hivernales dans les Écrins</strong> – 2020</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Ouverture en Belledonne - M5, 300m</strong> – 2019</div>
+    </li>
+  </ul>
+</section>
+
+<section id="realisations-pro" data-aos="fade-left">
+  <h2>Réalisations professionnelles</h2>
+  <div class="galerie">
+    <img src="rpro1.jpg" alt="rpro1" />
+    <img src="rpro2.jpg" alt="rpro2" />
+    <img src="rpro3.jpg" alt="rpro3" />
+    <img src="rpro4.jpg" alt="rpro4" />
+    <img src="rpro5.jpg" alt="rpro5" />
+  </div>
+  <ul class="timeline" data-aos="fade-up">
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Encadrement Mont Blanc (voie normale et Trois Monts)</strong> – 2024</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Stages d’alpinisme (débutant à perfectionnement)</strong> – 2023</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Raid à ski (Vanoise, Chamonix-Zermatt)</strong> – 2022</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Formations avalanche et DVA</strong> – 2021</div>
+    </li>
+    <li class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content"><strong>Stages de terrain scientifiques en altitude</strong> – 2020</div>
+    </li>
+  </ul>
+</section>
+
+<section id="avis" data-aos="fade-up">
+  <h2>Avis</h2>
+  <div class="testimonials">
+    <div class="testimonial-card" data-aos="zoom-in">
+      <p>"Plus qu'une guide, Alix est devenue une amie.<br>
+        Elle partage sa passion avec énormément de pédagogie et toujours dans la bonne ambiance, en construisant un projet commun sur le long terme.<br>
+        (ayant essayé d'autres guides avant) Ça fait vraiment la différence !<br>
+        Hâte de retourner là-haut avec ;)"</p>
+      <div class="author">
+        <img src="profil1.png" alt="Client 1" />
+        <span>Louna T.</span>
+      </div>
+    </div>
+    <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="100">
+      <p>"Une guide exceptionnelle !<br>
+        Toujours disponible et à l'écoute, elle est très sécurisante tout en abordant les choses avec beaucoup de légèreté.<br>
+        Paradoxe agréable dans un tel environnement."</p>
+      <div class="author">
+        <img src="profil2.png" alt="Client 2" />
+        <span>Alexendre M.</span>
+      </div>
+    </div>
+    <div class="testimonial-card" data-aos="zoom-in" data-aos-delay="200">
+      <p>"Toujours au top !<br>
+        Alix est une jeune guide motivée, inspirante et professionnelle.<br>
+        Très agréable de parager une journée ensemble."</p>
+      <div class="author">
+        <img src="profil3.png" alt="Client 3" />
+        <span>Yoann N.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" data-aos="zoom-in">
+ <div>
+  <h2 style="margin-bottom:0; font-size: 3em;">Contact</h2>
+  <p style="text-align:center; margin-top:0; margin-bottom:5; font-size: 0.8em;">N'hésitez pas =)</p>
+</div><br>
+  <div class="contact-info">
+    <p><i class="fas fa-phone-alt"></i>06 67 15 48 52</p>
+    <p><i class="fas fa-envelope"></i> gallyalixx@gmail.com</p>
+  </div>
+  <form action="https://formspree.io/f/xjkyzpel" method="POST">
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="text" name="objet" placeholder="Objet" required>
+    <input type="email" name="_replyto" placeholder="Votre email" required>
+    <textarea name="message" rows="6" placeholder="Votre message..." required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+  <footer>
+  <p>&copy; <strong>2025 - Alix Gally – Guide de Haute Montagne UIAGM.</strong> Tous droits réservés.</p>
+</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    // Bouton retour en haut
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    }
+    function topFunction() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
+    // Burger menu toggle
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    }
+    document.querySelector('.burger-menu').addEventListener('click', function() {
+    document.querySelector('.menu-items').style.display = 'flex';
+});
+
+document.querySelector('.menu-items').addEventListener('click', function() {
+    this.style.display = 'none';
+});
+
+  </script>
+</body>
+</html>
