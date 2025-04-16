@@ -91,7 +91,8 @@
     .cta-btn {
       background: linear-gradient(90deg, #ffa726, #42a5f5);
       color: white;
-      padding: 16px 36px;
+      padding: 16px 34px;
+      max-width: 80%;
       border: none;
       border-radius: 30px;
       font-size: 1em;
@@ -183,7 +184,8 @@
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(66,165,245,0.08);
       padding: 24px 18px;
-      width: 220px;
+      width: 20%;
+      max-width: 20%;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
@@ -208,8 +210,8 @@
       color: #444;
     }
     .presta-card.full-width {
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 90%;
   text-align: center;
 }
     /* Galerie */
@@ -291,7 +293,8 @@
       border-radius: 14px;
       box-shadow: 0 2px 12px rgba(66,165,245,0.08);
       padding: 24px 18px;
-      width: 280px;
+      width: 20%;
+      max-width: 20%;
       text-align: left;
       position: relative;
       overflow: hidden;
@@ -440,8 +443,8 @@
         align-items: center;
       }
       .presta-card, .testimonial-card {
-        width: 90vw;
-        max-width: 350px;
+        width: 90%;
+  max-width: 90%;
       }
       .map-container iframe {
         width: 90vw;
@@ -651,6 +654,37 @@
     nav a {
         display: none; /* Cacher les liens de navigation classiques */
     }
+    .galerie img {
+  width: 100%;
+  height: auto;
+  max-width: 140px;
+}
+@media (max-width: 400px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+  .sous-titre {
+    font-size: 1em;
+  }
+}
+@media (max-width: 500px) {
+  .presta-card,
+  .testimonial-card {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+.map-container iframe {
+  width: 90%;
+  max-width: 90%;
+  height: auto;
+}
+@media (max-width: 500px) {
+  footer {
+    font-size: 0.9em;
+  }
+}
+
 
 
   </style>
@@ -1000,7 +1034,7 @@
 </section>
 
   <footer>
-  <p>&copy; <strong>2025 - Alix Gally – Guide de Haute Montagne UIAGM.</strong> Tous droits réservés.</p>
+  <p>&copy; <strong>2025 - Alix Gally – Guide de Haute Montagne </strong> Tous droits réservés.</p>
 </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -1033,6 +1067,12 @@
 document.querySelector('.menu-items').addEventListener('click', function() {
     this.style.display = 'none';
 });
+    // Ouvre/ferme le menu burger quand on clique dessus
+document.querySelector('.burger-menu').addEventListener('click', function() {
+  const menu = document.querySelector('.menu-items');
+  menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+});
+
 
   </script>
 </body>
