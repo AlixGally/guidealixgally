@@ -141,8 +141,8 @@
       background: rgba(255,255,255,0.85);
       border-radius: 18px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      margin-top: 40px;
-      margin-bottom: 40px;
+      margin-top: 25px;
+      margin-bottom: 25px;
     }
     h2 {
       text-align: center;
@@ -182,10 +182,10 @@
     .presta-card {
       background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
       border-radius: 14px;
+      width: 95%;
+      max-width: 95%;
       box-shadow: 0 2px 12px rgba(66,165,245,0.08);
       padding: 24px 18px;
-      width: 20%;
-      max-width: 20%;
       text-align: center;
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
@@ -210,8 +210,8 @@
       color: #444;
     }
     .presta-card.full-width {
-  width: 90%;
-  max-width: 90%;
+  width: 92%;
+  max-width: 92%;
   text-align: center;
 }
     /* Galerie */
@@ -684,6 +684,28 @@
     font-size: 0.9em;
   }
 }
+.carte-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px; /* ← écart entre les deux */
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+#map-alpes {
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
+  border-radius: 22px;
+  box-shadow: 0 2px 12px rgba(66,165,245,0.08);
+}
+
+.carte-image img {
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
 
 
 
@@ -738,7 +760,7 @@
   <h2>À propos</h2>
 
   <div class="apropos-flex">
-    <img src="monprofil.jpg" alt="Portrait Alix Gally" />
+    <img src="monprofil.jpg" alt="Portrait Alix Gally" style="width: 180px;" />
   </div>
 
   <div class="apropos-blocs">
@@ -793,8 +815,15 @@
 
   </div>
 
-  <!-- Carte -->
-  <div id="map-alpes" style="width:100%;max-width:260px;height:180px;margin:30px auto;border-radius:22px;box-shadow:0 2px 12px rgba(66,165,245,0.08);"></div>
+
+ <div style="display: flex; justify-content: center; align-items: center; gap: 50px; margin-top: 30px; flex-wrap: wrap;">
+
+  <!-- Carte Leaflet -->
+   <img src="monprofil2.jpg" alt="Portrait Alix Gally" style="width: 134px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.18);" />
+  <div id="map-alpes" style="width: 160px; height: 140px; border-radius: 22px; box-shadow: 0 1.6px 9px rgba(66,165,245,0.08);">
+  </div>
+
+</div>
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -818,7 +847,7 @@
 <section id="prestations" data-aos="fade-up">
   <h2>Prestations</h2>
   <div class="prestations">
-    <div class="presta-card" data-aos="zoom-in">
+    <div class="presta-card full-width2" data-aos="zoom-in">
       <i class="fas fa-mountain"></i>
       <h3>Pratique</h3>
       <p>
@@ -827,7 +856,7 @@
         Je propose de l'alpinisme classique, escalade, grandes voies, courses d’arêtes, ski de randonnée, cascade de glace, goulottes, escalade mixte...
       </p>
     </div>
-    <div class="presta-card" data-aos="zoom-in" data-aos-delay="100">
+    <div class="presta-card full-width2" data-aos="zoom-in" data-aos-delay="100">
       <i class="fas fa-map-marked-alt"></i>
       <h3>Lieu</h3>
       <p>
@@ -836,7 +865,7 @@
         Même en Suisse,Italie...
       </p>
     </div>
-    <div class="presta-card" data-aos="zoom-in" data-aos-delay="200">
+    <div class="presta-card full-width2" data-aos="zoom-in" data-aos-delay="200">
       <i class="fas fa-calendar-alt"></i>
       <h3>Saison</h3>
       <p>
@@ -845,7 +874,7 @@
         Printemps, été, automne ou hiver, c'est selon les conditions du moment.
       </p>
     </div>
-    <div class="presta-card" data-aos="zoom-in" data-aos-delay="300">
+    <div class="presta-card full-width2" data-aos="zoom-in" data-aos-delay="300">
       <i class="fas fa-clock"></i>
       <h3>Durée</h3>
       <p>
@@ -853,13 +882,13 @@
         De la demi-journée d'escalade ou de ski, jusqu'à plusieurs jours pour une ascension ou un raid à ski, on adapte le rythme.
       </p>
     </div>
-    <div class="presta-card" data-aos="zoom-in" data-aos-delay="400">
+    <div class="presta-card full-width2" data-aos="zoom-in" data-aos-delay="400">
       <i class="fas fa-graduation-cap"></i>
       <h3>Stage progression & sécurité</h3>
       <p>Pour booster votre apprentissage et progression, je propose des stages (journée ou plusieurs jours) : école de glace, terrain d’aventure, encordement glacier et rocher, sécurité avalanche et progression technique.<br>
         Bref, tout pour être prêt à attaquer la montagne en confiance avec le sourire !</p>
     </div>
-    <div class="presta-card" data-aos="zoom-in" data-aos-delay="500">
+    <div class="presta-card full-width2" data-aos="zoom-in" data-aos-delay="500">
       <i class="fas fa-parachute-box"></i>
       <h3>Bonus : Parapente</h3>
       <p>
@@ -905,12 +934,9 @@
         Après l’activité, vous êtes libre d’ajouter la contribution de votre choix selon votre satisfaction, le déroulement de la sortie et le travail accompli (qui peut énormément varier selon les conditions du jour, difficile à prévoir).<br><br>
       Ce modèle participatif favorise la confiance, l’équité et la reconnaissance de mon travail.
     </div>
-<p style="font-size: 1.36em;">La montagne n’est pas seulement un sommet à atteindre, c’est un chemin à partager</p>
+<p style="font-size: 1.36em;"><center> > La montagne n’est pas seulement un sommet à atteindre, c’est un chemin à partager < </center></p>
   </div>
 </section>
-
-
-
 
 
 
@@ -926,23 +952,23 @@
   <ul class="timeline" data-aos="fade-up">
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Ascension solo de l’Aiguille Verte (Whymper)</strong> – 2023</div>
+      <div class="timeline-content"><strong>Trilogie Faces N ("Harlin, Bonatti Diretissima, Colton Macintyre") (M7+) </strong>- Eiger, Cervin, Jorasses - 2023</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Traversée des Arêtes du Diable</strong> – 2022</div>
+      <div class="timeline-content"><strong>Ski de pente raide : "Nant Blanc" (5.5) </strong>- Aiguille Verte - 2021</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Expédition Patagonie - Cerro Torre (tentative)</strong> – 2021</div>
+      <div class="timeline-content"><strong>"Divine Providance" (7b) </strong>- Grand Pilier d'Angle - 2025</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Courses hivernales dans les Écrins</strong> – 2020</div>
+      <div class="timeline-content"><strong>Ouverture Face NE du Lauteraarhorn (M6?) </strong>- Grindelwald, Guttannen - 2023</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Ouverture en Belledonne - M5, 300m</strong> – 2019</div>
+      <div class="timeline-content"><strong>Escalade : "Stairway To Heaven" (8b) </strong>- Céüse - 2022</div>
     </li>
   </ul>
 </section>
@@ -959,23 +985,23 @@
   <ul class="timeline" data-aos="fade-up">
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Encadrement Mont Blanc (voie normale et Trois Monts)</strong> – 2024</div>
+      <div class="timeline-content"><strong>Goulotte : SuperCouloir (M6) </strong>- Mont Blanc du Tacul - 2025</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Stages d’alpinisme (débutant à perfectionnement)</strong> – 2023</div>
+      <div class="timeline-content"><strong>Raid à ski : Haute Route (2j) </strong>- Chamonix/Zermatt - 2025</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Raid à ski (Vanoise, Chamonix-Zermatt)</strong> – 2022</div>
+      <div class="timeline-content"><strong>Escalde : République bananière (6c+) </strong>- Aiguille de la République - 2024</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Formations avalanche et DVA</strong> – 2021</div>
+      <div class="timeline-content"><strong>Écoles de glace & Sécu avalanche </strong>- Chamonix - 2024</div>
     </li>
     <li class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-content"><strong>Stages de terrain scientifiques en altitude</strong> – 2020</div>
+      <div class="timeline-content"><strong>Stages encordement glaciaire et rocheux </strong>- Chamonix - 2024</div>
     </li>
   </ul>
 </section>
@@ -1034,7 +1060,8 @@
 </section>
 
   <footer>
-  <p>&copy; <strong>2025 - Alix Gally – Guide de Haute Montagne </strong> Tous droits réservés.</p>
+  <p>&copy; <strong>2025 - Alix Gally – Guide de Haute Montagne. </strong><br>
+    Tous droits réservés.</p>
 </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
