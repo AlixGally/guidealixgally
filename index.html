@@ -425,6 +425,22 @@
       background: #ffa726;
       transform: scale(1.1);
     }
+    #logoFixed {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  height: 70px; /* Ajuste la taille si besoin */
+  z-index: 999;
+  background: none;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  /* Optionnel : transition pour effet au hover */
+  transition: transform 0.2s;
+}
+#logoFixed:hover {
+  transform: scale(1.08);
+}
+
     footer {
       background: #1f1f1f;
       color: white;
@@ -715,15 +731,7 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
 
-.logo-fixed {
-  position: fixed !important;
-  bottom: 0;
-  left: 0;
-  height: 80px;
-  z-index: 1000;
-  margin: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-}
+
 
 
 
