@@ -716,14 +716,15 @@
 }
 
 .logo-fixed {
-  position: fixed;
+  position: fixed !important;
   bottom: 0;
   left: 0;
-  height: 80px; /* Ajuste la taille si besoin */
+  height: 80px;
   z-index: 1000;
   margin: 18px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.18);
 }
+
 
 
   </style>
@@ -1121,8 +1122,9 @@ document.querySelector('.menu-items').addEventListener('click', function() {
 });
    
 
-
+<img src="logoAG.png" alt="Logo Alix Gally" class="logo-fixed">
+  
   </script>
-  <img src="logoAG.png" alt="Logo Alix Gally" class="logo-fixed">
+
 </body>
 </html>
