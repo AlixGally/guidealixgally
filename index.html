@@ -715,6 +715,15 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
 }
 
+.logo-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 80px; /* Ajuste la taille si besoin */
+  z-index: 1000;
+  margin: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
 
 
   </style>
@@ -737,8 +746,6 @@
 
   <header class="animate__animated animate__fadeIn">
     <div class="header-content">
-      <div class="logo-container">
-      <img src="logoAG.png" alt="Logo Alix Gally" style="height: 90px; width: auto; margin-bottom: 18px;">
       <h1>Alix Gally</h1>
       <p class="sous-titre">Guide de Haute Montagne UIAGM</p>
       <div class="slogan">«Beau temps, mauvais temps, facile, difficile, j'ai besoin de chanter le même hymne que lui.<br>
@@ -1116,5 +1123,6 @@ document.querySelector('.menu-items').addEventListener('click', function() {
 
 
   </script>
+  <img src="logoAG.png" alt="Logo Alix Gally" class="logo-fixed">
 </body>
 </html>
